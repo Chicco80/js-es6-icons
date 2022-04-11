@@ -12,3 +12,15 @@ main{
     height: calc(100vh - 50px);
 }
 
+.box{
+    width:150px;
+    height: 100px;
+    line-height: 100px;
+    /* margin: 0 auto; */
+    text-align:center;
+    font-size:30px;
+    background-color: white;
+    border: 1px solid white;
+    box-shadow: 2px 1px 15px black ;
+    border-radius: 20px;
+}
