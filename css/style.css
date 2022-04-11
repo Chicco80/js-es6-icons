@@ -29,3 +29,12 @@ main{
     box-shadow: 2px 1px 15px black ;
     border-radius: 20px;
 }
+.orange{
+    color:orange;
+}
+.green{
+    color:green;
+}
+.blue{
+    color: blue;
+}
