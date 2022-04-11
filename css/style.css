@@ -11,6 +11,11 @@ nav{
 main{
     height: calc(100vh - 50px);
 }
+.font{
+    font-size: 10px;
+    margin-top: 5px;
+}
+
 
 .box{
     width:150px;
@@ -18,7 +23,7 @@ main{
     line-height: 100px;
     /* margin: 0 auto; */
     text-align:center;
-    font-size:30px;
+    font-size:30px; 
     background-color: white;
     border: 1px solid white;
     box-shadow: 2px 1px 15px black ;

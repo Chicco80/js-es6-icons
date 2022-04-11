@@ -113,5 +113,26 @@ const icons =
  		color: 'blue'
  	}
  ];
- console.log(icons)
+//  console.log(icons)
+ /*<div class="box col-5 m-2">
+  <i class="fa-solid fa-cat"><p>cat</p></i>
+ </div> */
+  const row = document.getElementById("row");
+ let boxCard = "";
 
+ icons.forEach((element)=>{
+	 boxCard = `
+	<div class="box col-5 m-2">
+	  <i class="${element.family} ${element.prefix + element.name}">
+	  <p class="font">${element.name}</p>
+	  </i>
+	</div>
+	 `;
+	 row.innerHTML += boxCard;
+	 console.log(boxCard)
+ });
+
+ 
+
+
+//  console.log( element.prefix, element.family, element.name, element.type)
