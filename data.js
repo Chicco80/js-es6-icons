@@ -130,8 +130,27 @@ const icons =
 	</div>
 	 `;
 	 row.innerHTML += boxCard;
-	 console.log(boxCard)
+	//  console.log(boxCard);
  });
+
+
+ const typeVeg = icons.filter((categoria) => categoria.type === "vegetable");
+//  console.log(typeVeg)
+ const typeAnim = icons.filter((categoria) => categoria.type === "animal");
+//  console.log(typeAnim)
+ const typeUser = icons.filter((categoria) => categoria.type === "user");
+//  console.log(typeUser)
+
+let seleziona = document.getElementById("slc");
+   let type = seleziona.value;
+   console.log(type)
+ 
+
+
+ 
+	
+
+
 
 
 
