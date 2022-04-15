@@ -113,15 +113,35 @@ const icons =
  		color: 'blue'
  	}
  ];
-//  console.log(icons)
- /*<div class="box col-5 m-2">
-  <i class="fa-solid fa-cat"><p>cat</p></i>
- </div> */
+ //utility random number
+ function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+ };
+
+function getRandomColor() {
+	const symbols = '0123456789ABCDEF';
+	const lastSimbolIndex = symbols.length -1;
+	let color = '#';
+	for (let i = 0; i < 6; i++) {
+		const randomIndex = getRandomInt(0, lastSimbolIndex);
+		const randonSymbol = symbols.charAt(randomIndex);
+	  color += randonSymbol;
+	}
+	return color;
+  }
+
   const row = document.getElementById("row");
   let boxCard = "";
-  
+   
+icons.forEach((element)=>{
+	element.color = getRandomColor()
+});
 
- icons.forEach((element)=>{
+function print(selectedIcons){
+	row.innerHTML = "";
+ selectedIcons.forEach((element)=>{
 	 boxCard = `
 	<div class="box col-5 m-2">
 	  <i class="${element.family} ${element.color} ${element.prefix + element.name}">
@@ -131,20 +151,24 @@ const icons =
 	 `;
 	 row.innerHTML += boxCard;
 	//  console.log(boxCard);
- });
+ })
+}
+print(icons);
 
-
- const typeVeg = icons.filter((categoria) => categoria.type === "vegetable");
-//  console.log(typeVeg)
- const typeAnim = icons.filter((categoria) => categoria.type === "animal");
-//  console.log(typeAnim)
- const typeUser = icons.filter((categoria) => categoria.type === "user");
-//  console.log(typeUser)
-
-let seleziona = document.getElementById("slc");
-   let type = seleziona.value;
-   console.log(type)
- 
+const seleziona = document.getElementById("slc");
+//   console.log(slc);
+  seleziona.addEventListener("change", function(){
+	  const iconType = this.value;
+	  
+		const selectedIcons = icons.filter((icona)=>{
+			if(icona.type === iconType || !iconType){
+				return true ;
+			}else{
+				return false;
+			}
+		});
+		print(selectedIcons);
+  });
 
 
  
